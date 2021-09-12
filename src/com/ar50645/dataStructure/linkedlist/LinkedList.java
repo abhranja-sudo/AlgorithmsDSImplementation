@@ -1,8 +1,8 @@
 package com.ar50645.dataStructure.linkedlist;
 
 public class LinkedList {
-    Node head;
-    Node tail;
+    private Node head;
+    private Node tail;
 
     public LinkedList() {
         head = null;
