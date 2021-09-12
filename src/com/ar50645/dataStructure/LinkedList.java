@@ -25,6 +25,16 @@ public class LinkedList {
         this.tail = tail;
     }
 
+    public void append(Node toAdd){
+        if(head == null){
+            head = toAdd;
+        }
+        else {
+            tail.setNext(toAdd);
+        }
+        tail = toAdd;
+    }
+
     /**
      * Get the nth element in the list
      * 1 - based index i.e the first element is in 1st index
