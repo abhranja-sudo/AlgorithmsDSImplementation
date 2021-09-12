@@ -4,9 +4,9 @@ public class LinkedList {
     Node head;
     Node tail;
 
-    public LinkedList(Node head, Node tail) {
-        this.head = head;
-        this.tail = tail;
+    public LinkedList() {
+        head = null;
+        tail = null;
     }
 
     public Node getHead() {
