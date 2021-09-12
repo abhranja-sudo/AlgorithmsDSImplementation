@@ -1,4 +1,4 @@
-package com.ar50645.dataStructure;
+package com.ar50645.dataStructure.linkedlist;
 
 public class LinkedList {
     Node head;
