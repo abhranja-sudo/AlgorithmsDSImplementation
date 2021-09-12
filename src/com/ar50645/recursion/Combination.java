@@ -1,4 +1,4 @@
-package com.ar50645.algorithms.recursion;
+package com.ar50645.recursion;
 
 //Given an array of integers, print all combinations of size X.
 

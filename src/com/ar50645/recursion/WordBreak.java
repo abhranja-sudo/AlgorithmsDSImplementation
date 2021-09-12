@@ -1,4 +1,4 @@
-package com.ar50645.algorithms.recursion;
+package com.ar50645.recursion;
 
 /*
 WordBreakProblem: Given a String S, which contains letters and no spaces, determine if you can break it into valid words.

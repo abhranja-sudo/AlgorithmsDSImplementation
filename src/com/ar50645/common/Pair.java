@@ -1,4 +1,4 @@
-package com.ar50645.algorithms.common;
+package com.ar50645.common;
 
 public class Pair<T> {
     T first;
