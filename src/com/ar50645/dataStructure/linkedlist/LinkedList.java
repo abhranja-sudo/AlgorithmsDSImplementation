@@ -80,4 +80,24 @@ public class LinkedList {
             prev.setNext(n.getNext());
         }
     }
+
+    public Node getMedian(){
+        if(head == null || tail == null) {
+            return null;
+        }
+        Node fast = head;
+        Node slow = head;
+
+        while (fast != null){
+            fast = fast.getNext();
+            if(fast == null){
+                break;
+            }
+
+            fast = fast.getNext();
+            slow = slow.getNext();
+        }
+
+        return slow;
+    }
 }
