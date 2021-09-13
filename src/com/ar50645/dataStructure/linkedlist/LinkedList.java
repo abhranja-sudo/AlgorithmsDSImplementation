@@ -37,7 +37,7 @@ public class LinkedList {
 
     /**
      * Get the nth element in the list
-     * 1 - based index i.e the first element is in 1st index
+     * 1 - based index ie the first element is in 1st index
      */
     public Node get(int n){
         Node node = getHead();
@@ -51,6 +51,16 @@ public class LinkedList {
             throw new IndexOutOfBoundsException("no node at index "+ n);
         }
         return node;
+    }
+
+    public void deleteWithoutPrev(Node n){
+        Node next = n.getNext();
+        if(head == null){
+            return; //cannot delete
+        }
+
+        n.setData(next.getData());
+        delete(n, next);
     }
 
     public void delete(Node n, Node prev){
