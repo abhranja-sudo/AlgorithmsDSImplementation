@@ -53,4 +53,52 @@ public class Cycle {
         return nodesPassed;
     }
 
+    //Given a Linked List with a cycle, find the node where the cycle begins.
+    public static Node findCycleStart(Node head){
+
+        //find the length of loop
+        Node fast = head, slow = head;
+        while (fast != null){
+            fast = fast.getNext();
+            if(fast == slow){
+                break;
+            }
+            if(fast != null) {
+                fast = fast.getNext();
+                if(fast == slow) {
+                    break;
+                }
+            }
+            slow = slow.getNext();
+        }
+
+        // not a cycle
+        if(fast == null){
+            return null;
+        }
+
+        // Calculate total length of the cycle
+        fast = fast.getNext();
+        int nodesPassed = 1;
+
+        while (fast != slow){
+            fast = fast.getNext();
+            nodesPassed++;
+        }
+
+        //find start of the cycle
+        fast = head;
+        slow = head;
+        for(int i = 0; i < nodesPassed; i++){
+            fast = fast.getNext();
+        }
+
+        while (fast != slow){
+            fast = fast.getNext();
+            slow = slow.getNext();
+        }
+
+        return fast;
+    }
+
 }
