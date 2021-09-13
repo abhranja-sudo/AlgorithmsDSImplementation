@@ -52,4 +52,22 @@ public class LinkedList {
         }
         return node;
     }
+
+    public void delete(Node n, Node prev){
+
+        if(n == null){
+            return;
+        }
+
+        if(n == head){
+            head = head.getNext();
+        }
+        else if(n == tail){
+            tail = prev;
+        }
+
+        if(prev != null){
+            prev.setNext(n.getNext());
+        }
+    }
 }
