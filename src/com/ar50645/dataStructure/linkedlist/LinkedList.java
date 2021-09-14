@@ -25,11 +25,10 @@ public class LinkedList {
         this.tail = tail;
     }
 
-    public void append(Node toAdd){
-        if(head == null){
+    public void append(Node toAdd) {
+        if (head == null) {
             head = toAdd;
-        }
-        else {
+        } else {
             tail.setNext(toAdd);
         }
         tail = toAdd;
@@ -39,23 +38,23 @@ public class LinkedList {
      * Get the nth element in the list
      * 1 - based index ie the first element is in 1st index
      */
-    public Node get(int n){
+    public Node get(int n) {
         Node node = getHead();
-        for(int i = 0; i < n - 1; i++){
-            if(node == null){
-                throw new IndexOutOfBoundsException("no node at index "+ n);
+        for (int i = 0; i < n - 1; i++) {
+            if (node == null) {
+                throw new IndexOutOfBoundsException("no node at index " + n);
             }
             node = node.getNext();
         }
-        if(node == null){
-            throw new IndexOutOfBoundsException("no node at index "+ n);
+        if (node == null) {
+            throw new IndexOutOfBoundsException("no node at index " + n);
         }
         return node;
     }
 
-    public void deleteWithoutPrev(Node n){
+    public void deleteWithoutPrev(Node n) {
         Node next = n.getNext();
-        if(head == null){
+        if (head == null) {
             return; //cannot delete
         }
 
@@ -63,34 +62,33 @@ public class LinkedList {
         delete(n, next);
     }
 
-    public void delete(Node n, Node prev){
+    public void delete(Node n, Node prev) {
 
-        if(n == null){
+        if (n == null) {
             return;
         }
 
-        if(n == head){
+        if (n == head) {
             head = head.getNext();
-        }
-        else if(n == tail){
+        } else if (n == tail) {
             tail = prev;
         }
 
-        if(prev != null){
+        if (prev != null) {
             prev.setNext(n.getNext());
         }
     }
 
-    public Node getMedian(){
-        if(head == null || tail == null) {
+    public Node getMedian() {
+        if (head == null || tail == null) {
             return null;
         }
         Node fast = head;
         Node slow = head;
 
-        while (fast != null){
+        while (fast != null) {
             fast = fast.getNext();
-            if(fast == null){
+            if (fast == null) {
                 break;
             }
 
