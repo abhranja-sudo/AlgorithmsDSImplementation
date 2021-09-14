@@ -1,5 +1,7 @@
 package com.ar50645.dataStructure.lru;
 
+import com.ar50645.common.Pair;
+
 import java.util.HashMap;
 
 public class LRUCache<K, V> {
@@ -89,5 +91,7 @@ public class LRUCache<K, V> {
             tail = toRemove.getPrev();
         }
     }
+
+
 
 }

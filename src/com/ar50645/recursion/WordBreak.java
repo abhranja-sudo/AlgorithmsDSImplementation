@@ -16,18 +16,6 @@ import com.sun.xml.internal.ws.api.model.wsdl.editable.EditableWSDLService;
 import java.util.*;
 
 public class WordBreak {
-    public static void main(String[] args) {
-        Set<String> dict = new HashSet<>();
-        dict.add("i");
-        dict.add("like");
-        dict.add("mango");
-        dict.add("tango");
-        dict.add("man");
-        dict.add("go");
-        dict.add("tan");
-        System.out.println(wordBreak("ilikemangotango", dict));
-    }
-
     public enum Memo {
         NOT_FOUND,
         UNVISITED

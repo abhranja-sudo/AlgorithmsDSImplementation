@@ -5,9 +5,6 @@ import java.util.Arrays;
 //Given an array of integers A, print all its subsets.
 public class Subset {
 
-    public static void main(String[] args) {
-        printSubset(new int[]{0,1,2,3});
-    }
     public static void printSubset(int[] a){
         if( a == null || a.length == 0){
             return;

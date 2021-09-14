@@ -4,9 +4,6 @@ import java.util.Arrays;
 
 //Given an array A, print all permutations of size X.
 public class Permutation {
-    public static void main(String[] args) {
-        printPermutation(new int[]{0,1,2,3,4}, 3);
-    }
     public static void printPermutation(int[] a, int x){
         if(a == null || a.length == 0 || x > a.length){
             return;
