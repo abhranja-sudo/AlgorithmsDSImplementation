@@ -7,7 +7,7 @@ public class LRUCache<K, V> {
     //Map keys to nodes
     HashMap<K, Node<K, V>> map;
 
-    //Linked List variables
+    //Linked List variables. We can also abstract doubly LL code into separate class
     Node<K, V> head;
     Node<K, V> tail;
 
