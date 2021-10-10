@@ -1,6 +1,4 @@
-package com.ar50645.dataStructure.lru;
-
-import com.ar50645.common.Pair;
+package com.ar50645.dataStructure.linkedHashMap;
 
 import java.util.HashMap;
 

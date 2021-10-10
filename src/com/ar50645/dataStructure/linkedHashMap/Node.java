@@ -1,4 +1,4 @@
-package com.ar50645.dataStructure.lru;
+package com.ar50645.dataStructure.linkedHashMap;
 
 //Doubly LL node which store key and value
 public class Node<K, V> {
