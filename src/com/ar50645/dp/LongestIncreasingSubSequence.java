@@ -1,4 +1,4 @@
-package com.ar50645.DP;
+package com.ar50645.dp;
 
 //Given an array of integers, find the length of the longest increasing subsequence.
 //        For e.g, in [1, 3, 2, 5, 3, 5, 6], the longest increasing subsequence is [1, 2, 3, 5, 6] of length 5.

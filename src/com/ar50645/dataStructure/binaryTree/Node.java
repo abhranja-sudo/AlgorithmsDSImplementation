@@ -1,4 +1,4 @@
-package com.ar50645.dataStructure.BinaryTree;
+package com.ar50645.dataStructure.binaryTree;
 
 public class Node {
     Node left;

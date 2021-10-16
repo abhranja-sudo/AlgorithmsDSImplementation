@@ -1,4 +1,4 @@
-package com.ar50645.DP;
+package com.ar50645.dp;
 
 public class ClimbingSteps {
     //Let’s say you have to climb N steps. You can jump 1 step, 3 steps or 5 steps at a time.
