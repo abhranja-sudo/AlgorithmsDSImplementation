@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Node {
-    List<Node> neighbors;
-    int data;
-    State state;
+    private List<Node> neighbors;
+    private int data;
+    private State state;
 
     public List<Node> getNeighbors() {
         return neighbors;

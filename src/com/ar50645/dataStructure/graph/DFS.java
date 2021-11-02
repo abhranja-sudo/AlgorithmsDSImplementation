@@ -58,7 +58,7 @@ public class DFS {
             Node rootCopy = map.get(root);
 
             rootCopy.addNeighbour(map.get(nodeCopy));
-            if(node.state == UNVISITED) {
+            if(node.getState() == UNVISITED) {
                 dfsVisit(node, map);
             }
         }
