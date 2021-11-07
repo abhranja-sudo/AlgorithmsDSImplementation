@@ -42,6 +42,24 @@ public class LCA {
         return x;
     }
 
+    //If you don't have a parent pointer available
+    public static Node findLCAWithoutParent(Node root, final Node a, final Node b) {
+
+        if(root == null)
+            return null;
+
+        if(root == a || root == b)
+            return root;
+
+        Node left = findLCAWithoutParent(root.left, a, b);
+        Node right = findLCAWithoutParent(root.right, a, b);
+
+        if(left != null && right != null)
+            return root;
+
+        return left == null ? right : left;
+    }
+
 
     private class Node {
         Node left;
