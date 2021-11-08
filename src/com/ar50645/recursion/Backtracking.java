@@ -4,10 +4,11 @@ import java.util.Arrays;
 
 public class Backtracking {
 
-    /*Maze Problem: You are given a 2D array that represents a maze. It can have 2 values - 0 and 1.
-     1 represents a wall and 0 represents a path. The objective is to reach the bottom right corner,
-      i.e, A[A.length-1][A.length-1]. You start from A[0][0]. You can move in 4 directions - up, down, left and right.
-       Find if a path exists to the bottom right of the maze.
+    /*
+        Maze Problem: You are given a 2D array that represents a maze. It can have 2 values - 0 and 1.
+        1 represents a wall and 0 represents a path. The objective is to reach the bottom right corner,
+        i.e, A[A.length-1][A.length-1]. You start from A[0][0]. You can move in 4 directions - up, down, left and right.
+        Find if a path exists to the bottom right of the maze.
      */
 
     public static boolean isPathExists(int[][] a){

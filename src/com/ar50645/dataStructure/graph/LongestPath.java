@@ -8,6 +8,7 @@ import java.util.*;
 
 public class LongestPath {
 
+    //DP solution
     public static int findLenLongestPath(Graph graph) {
         if(graph.getNodes().get(0) == null)
             return 0;
