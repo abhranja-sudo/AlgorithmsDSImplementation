@@ -56,7 +56,9 @@ public class BottomTop {
         }
 
         int height = 1 + Math.max(leftResult.height, rightResult.height);
-        int longestPath = Math.max(Math.max(leftResult.longestPath, rightResult.longestPath), leftResult.height + rightResult.height + 1);
+
+        int longestPath = Math.max(Math.max(leftResult.longestPath, rightResult.longestPath),
+                leftResult.height + rightResult.height + 1);
         return new Result(height, longestPath);
 
     }

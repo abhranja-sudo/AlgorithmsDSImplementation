@@ -13,6 +13,10 @@ public class Node {
         this.isVisited = isVisited;
     }
 
+    public Node(int value) {
+        this.value = value;
+    }
+
     public boolean isVisited() {
         return isVisited;
     }

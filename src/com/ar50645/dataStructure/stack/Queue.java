@@ -1,6 +1,5 @@
 package com.ar50645.dataStructure.stack;
 
-import java.util.EmptyStackException;
 import java.util.Stack;
 
 /**
