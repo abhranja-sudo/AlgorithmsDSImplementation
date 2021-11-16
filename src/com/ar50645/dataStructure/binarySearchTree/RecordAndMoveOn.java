@@ -4,7 +4,7 @@ import com.ar50645.dataStructure.binaryTree.Node;
 
 /**
  * The idea is that when we do a binary search, we are moving closer to our target element.
- * If we find anode equal to the target, we record it in a variable. We then continue our search on the left,
+ * If we find a node equal to the target, we record it in a variable. We then continue our search on the left,
  * because if there is another equal node that came earlier, it will be on the left
  */
 public class RecordAndMoveOn {

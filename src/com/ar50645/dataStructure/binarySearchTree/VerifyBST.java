@@ -2,8 +2,6 @@ package com.ar50645.dataStructure.binarySearchTree;
 
 import com.ar50645.dataStructure.binaryTree.Node;
 
-import java.lang.management.MonitorInfo;
-
 /**
  *   Is BST: Given a Binary Tree, determine if it is a Binary Search Tree (BST).
  */
@@ -18,9 +16,7 @@ public class VerifyBST {
 
         if(left == null || right == null)
             return null;
-        if(left.max > root.getValue())
-            return null;
-        if(right.min < root.getValue())
+        if(left.max > root.getValue() || right.min < root.getValue())
             return null;
 
         int min = root.getLeft() == null ? root.getValue() : left.min;

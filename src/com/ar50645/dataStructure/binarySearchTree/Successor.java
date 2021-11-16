@@ -13,7 +13,7 @@ public class Successor {
             return null;
 
         if(root.getRight() != null)
-            return getLeftMostNode(n);
+            return getLeftMostNodeFromRight(n);
 
         return getFirstRightParentNode(root, n);
     }
@@ -29,13 +29,14 @@ public class Successor {
             }
             else if(n.getValue() > current.getValue())
                 current = current.getRight();
+
             else
                 break;
         }
         return result;
     }
 
-    private static Node getLeftMostNode(Node node) {
+    private static Node getLeftMostNodeFromRight(Node node) {
         Node current = node;
         while (current.getLeft() != null) {
             current = current.getLeft();

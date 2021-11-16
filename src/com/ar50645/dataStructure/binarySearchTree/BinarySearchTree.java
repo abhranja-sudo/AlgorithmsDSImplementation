@@ -64,12 +64,16 @@ public class BinarySearchTree {
 
 
     public void replaceChild(Node parent, Node oldChild, Node newChild) {
+
         if(parent == null) //root node
             root = newChild;
+
         else if(parent.getLeft() == oldChild)
             parent.setLeft(newChild);
+
         else if (parent.getRight() == oldChild)
             parent.setRight(newChild);
+
         else
             throw new IllegalArgumentException("Invalid Parent-Child ");
     }
