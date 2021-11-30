@@ -31,6 +31,7 @@ public class DFS {
                 return true;
             }
         }
+        node.setState(VISITED);
         return false;
     }
 
