@@ -19,7 +19,7 @@ public class Infix {
                 operandStack.push(ch - '0');
 
             else if(isOperator(ch)) {
-                while (!operatorStack.isEmpty() && precedence(ch) <= operatorStack.peek()) {
+                while (!operatorStack.isEmpty() && precedence(ch) <= precedence(operatorStack.peek())) {
                     process(operatorStack, operandStack);
                 }
                 operatorStack.push(ch);
