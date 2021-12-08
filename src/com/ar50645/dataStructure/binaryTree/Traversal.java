@@ -3,6 +3,7 @@ package com.ar50645.dataStructure.binaryTree;
 import java.util.Stack;
 
 public class Traversal {
+
     //PreOrder Visit
     public static void preOrderVisitRecursive(Node n) {
         if(n == null) {
@@ -12,7 +13,6 @@ public class Traversal {
         preOrderVisitRecursive(n.getLeft());
         preOrderVisitRecursive(n.getRight());
     }
-
 
     //InOrder Visit
     public static void inOrderVisit(Node n) {
