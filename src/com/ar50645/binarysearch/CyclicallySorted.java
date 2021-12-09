@@ -22,6 +22,7 @@ public class CyclicallySorted {
         int low = 0, high = a.length - 1, pivot = a[high];
 
         while (low <= high) {
+
             int mid = (low + high) / 2;
 
             if(a[mid] <= pivot && (mid == 0 || a[mid - 1] > a[mid]))
