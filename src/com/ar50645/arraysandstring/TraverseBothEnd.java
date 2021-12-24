@@ -50,4 +50,45 @@ public class TraverseBothEnd {
         return null;
     }
 
+
+    //Given a sorted array in non-decreasing order, return an array of squares of each number, also in non-decreasing order.
+
+    /**
+      T.C =
+     1. [-4,-1,0,3,10]
+
+     */
+    public int[] squareOfSortedArray(int[] arr) {
+
+        if(arr == null || arr.length == 0)
+            return null;
+
+        int[] result = new int[arr.length];
+
+        int left = 0;
+        int right = arr.length - 1;
+
+        int i = arr.length - 1;
+
+        while (left <= right) {
+
+            int l = Math.abs(arr[left]);
+            int r = Math.abs(arr[right]);
+
+
+            if(l < r) {
+                result[i] = r * r;
+                right--;
+            }
+
+            else if(r <= l) {
+                result[i] = l * l;
+                left++;
+            }
+
+            i--;
+        }
+
+        return result;
+    }
 }
