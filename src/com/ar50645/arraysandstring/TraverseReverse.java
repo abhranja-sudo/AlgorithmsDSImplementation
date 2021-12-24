@@ -13,7 +13,7 @@ public class TraverseReverse {
         int end = a.length;
         int i = findLastElement(a);
 
-        while (i >=0 ) {
+        while (i >= 0 ) {
 
             if(a[i] % 2 == 0)
                 a[--end] = a[i];
@@ -31,4 +31,29 @@ public class TraverseReverse {
         }
         return i;
     }
+
+    //Given a sentence, reverse the words of the sentence.
+    public static String reverse(String s) {
+
+        if(s == null || s.length() == 0)
+            return null;
+
+        int right = s.length();
+        int left = s.length() - 1;
+
+        StringBuilder sb = new StringBuilder();
+        while (left != 0) {
+            if(s.charAt(left) == ' ') {
+                sb.append(s, left + 1, right);
+                sb.append(" ");
+                right = left;
+            }
+            left--;
+        }
+
+        sb.append(s, left, right);
+        return sb.toString();
+    }
+
+
 }
