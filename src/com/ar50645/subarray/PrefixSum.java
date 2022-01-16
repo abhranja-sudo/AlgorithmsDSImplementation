@@ -2,7 +2,7 @@ package com.ar50645.subarray;
 
 import com.ar50645.common.Pair;
 
-import java.util.HashMap;
+import java.util.*;
 
 public class PrefixSum {
 
@@ -22,10 +22,10 @@ public class PrefixSum {
             if(prefixSum == 0)
                 return new Pair<>(0, i);
 
-            if(map.contains(prefixSum))
+            if(map.containsKey(prefixSum))
                 return new Pair<>(map.get(prefixSum) + 1, i);
 
-            map.put(sum, i);
+            map.put(prefixSum, i);
         }
 
         return null;
@@ -40,7 +40,7 @@ public class PrefixSum {
             return null;
 
         Map<Integer, Integer> map = new HashMap<>();
-        int prefixSum = 0;
+        int sum = 0;
 
         for(int i = 0; i < a.length; i++) {
             sum += a[i];
@@ -48,7 +48,7 @@ public class PrefixSum {
             if(sum == target)
                 return new Pair(0, i);
 
-            if(map.contains(sum - target))
+            if(map.containsKey(sum - target))
                 return new Pair(map.get(sum - target) + 1, i);
 
             map.put(sum, i);
