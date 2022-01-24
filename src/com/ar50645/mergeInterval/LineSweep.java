@@ -1,6 +1,5 @@
 package com.ar50645.mergeInterval;
 
-import java.nio.channels.Pipe;
 import java.util.*;
 
 public class LineSweep {
