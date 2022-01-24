@@ -4,8 +4,9 @@ import java.util.*;
 
 public class MergeIntervals {
 
-//    Given an array of intervals where intervals[i] = [start i, end i], merge all overlapping intervals, and
-//    return an array of the non-overlapping intervals that cover all the intervals in the input.
+/**    Given an array of intervals where intervals[i] = [start i, end i], merge all overlapping intervals, and
+    return an array of the non-overlapping intervals that cover all the intervals in the input.
+ **/
 
     public int[][] merge(int[][] intervals) {
         if(intervals.length < 2)
