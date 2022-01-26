@@ -3,16 +3,8 @@ package com.ar50645.arraysandstring;
 import java.util.Arrays;
 
 public class TwoDArray {
-    //An image is nothing but a matrix of pixels. Rotate a square image by 90 degrees anticlockwise, given an array of pixels as integers.
-    /**
-     * 1 2 3
-     * 4 5 6
-     * 7 8 9
-     * to
-     * 7 4 1
-     * 8 5 2
-     * 9 6 3
-     */
+    // 90 degrees anticlockwise, given an array of pixels as integers.
+
 
     public void rotate(int[][] a) {
         int n = a.length;
@@ -22,7 +14,6 @@ public class TwoDArray {
             for(int j = i; j < a.length - i - 1; j++) {
 
                 int temp = a[i][j];
-
                 // Move values from right to top
                 a[i][j] = a[j][n - 1 - i];
 
@@ -38,6 +29,23 @@ public class TwoDArray {
                 a[n - 1 - j][i] = temp;
             }
 
+        }
+    }
+
+
+    //rotate clockwise
+    class Solution {
+        public void rotate(int[][] matrix) {
+            int n = matrix.length;
+            for (int i = 0; i < (n + 1) / 2; i ++) {
+                for (int j = 0; j < n / 2; j++) {
+                    int temp = matrix[n - 1 - j][i];
+                    matrix[n - 1 - j][i] = matrix[n - 1 - i][n - j - 1];
+                    matrix[n - 1 - i][n - j - 1] = matrix[j][n - 1 -i];
+                    matrix[j][n - 1 - i] = matrix[i][j];
+                    matrix[i][j] = temp;
+                }
+            }
         }
     }
 
