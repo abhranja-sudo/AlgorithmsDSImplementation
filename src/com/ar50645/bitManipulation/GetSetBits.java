@@ -51,4 +51,16 @@ public class GetSetBits {
     public double logBase2(int num) {
         return Math.log(num)/ Math.log(2);
     }
+
+    public int findMissingNum(int[] a, int n) {
+        int result = 0;
+        for(int i = 1; i < n; i++) {
+            result = result ^ i;
+        }
+
+        for(int num: a) {
+            result = result ^ num;
+        }
+        return result;
+    }
 }
