@@ -21,4 +21,13 @@ public class GetSetBits {
         }
         return num;
     }
+
+    public int reverseBits(int num) {
+        int i = 0, j = 31;
+
+        while(i < j) {
+            num = swap(num, i++, i--);
+        }
+        return num;
+    }
 }
