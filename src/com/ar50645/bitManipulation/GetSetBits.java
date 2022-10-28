@@ -40,4 +40,15 @@ public class GetSetBits {
         }
         return count;
     }
+
+    public int complement(int num) {
+        int lastOnePos = (int)logBase2(num);
+
+        int mask = (1 << (lastOnePos + 1)) - 1;
+        return num ^ mask;
+    }
+
+    public double logBase2(int num) {
+        return Math.log(num)/ Math.log(2);
+    }
 }
