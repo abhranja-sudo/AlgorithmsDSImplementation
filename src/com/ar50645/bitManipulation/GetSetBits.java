@@ -14,4 +14,11 @@ public class GetSetBits {
         }
         throw new IllegalArgumentException("value To set is illegal");
     }
+
+    public int swap(int num, int i, int j) {
+        if(getBit(num, i) != getBit(num, j)) {
+            return num ^((1 << i) | (1 << j));
+        }
+        return num;
+    }
 }
