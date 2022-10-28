@@ -30,4 +30,14 @@ public class GetSetBits {
         }
         return num;
     }
+
+    //count the number of set bits in its binary representation
+    public int countSetBits(int num) {
+        int count = 0;
+        while(num != 0) {
+            count++;
+            num = num & (num - 1);
+        }
+        return count;
+    }
 }
