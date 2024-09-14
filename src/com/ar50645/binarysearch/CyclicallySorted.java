@@ -12,6 +12,8 @@ package com.ar50645.binarysearch;
  *
  * @Return Condition:  see below
  */
+
+// will not work if there is duplicates.
 public class CyclicallySorted {
 
     public int getSmallestIndex(int[] a) {
