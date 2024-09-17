@@ -20,28 +20,28 @@ import java.util.Queue;
  * no one knows each other. Determine if such a grouping is possible, and if so, make the 2 groups
  */
 public class Bipartite {
-    public static Pair<List<Node>> bipartite(Graph graph){
+    public static Pair<List<Node>, Number> bipartite(Graph graph){
 
         List<Node> group1 = new ArrayList<>();
         List<Node> group2 = new ArrayList<>();
 
         for(Node node: graph.nodes) {
             if(node.getState() == State.UNVISITED) {
-                Pair<List<Node>> pair = getBipartite(node);
+                Pair<List<Node>, Number> pair = getBipartite(node);
 
                 //If any component is not bipartite, the whole graph is not bipartite
                 if(pair == null) {
                     return null;
                 }
-                group1.addAll(pair.getFirst());
-                group2.addAll(pair.getSecond());
+                group1.addAll(pair.first());
+                group2.addAll(pair.second());
             }
         }
 
         return new Pair<>(group1, group2);
     }
 
-    public static Pair<List<Node>> getBipartite(Node node) {
+    public static Pair<List<Node>, Number> getBipartite(Node node) {
         Queue<Node> queue = new LinkedList<>();
         List<Node> oddNodes = new ArrayList<>();
         List<Node> evenNodes = new ArrayList<>();

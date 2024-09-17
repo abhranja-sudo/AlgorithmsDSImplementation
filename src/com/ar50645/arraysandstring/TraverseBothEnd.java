@@ -30,7 +30,7 @@ public class TraverseBothEnd {
 
 
 //    2 Sum Problem: Given a sorted array of integers, find two numbers in the array that sum to a given integer target.
-    public Pair<Integer> twoSum(int[] a, int target) {
+    public Pair<Integer, Number> twoSum(int[] a, int target) {
 
         if(a == null)
             return null;

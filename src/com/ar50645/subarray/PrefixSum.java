@@ -9,7 +9,7 @@ public class PrefixSum {
     /**
      * Given an array of integers, find the contiguous subarray that sums to 0. The array can contain both negative and positive integers.
      */
-    public Pair<Integer> subArraySumZero(int[] a) {
+    public Pair<Integer, Number> subArraySumZero(int[] a) {
 
         if(a == null || a.length == 0)
             return null;
@@ -35,7 +35,7 @@ public class PrefixSum {
      * Given an array of integers, both -ve and +ve, find a contiguous subarray that sums to a number X
      */
 
-    public Pair<Integer> subArraySum(int[] a, int target) {
+    public Pair<Integer, Number> subArraySum(int[] a, int target) {
         if(a == null || a.length == 0)
             return null;
 
