@@ -1,6 +1,28 @@
 package com.ar50645.dataStructure.linkedHashMap;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
+
+// one way
+public class LRUCache<K, V> extends LinkedHashMap<K, V> {
+    private final int capacity;
+
+    // Constructor
+    public LRUCache(int capacity) {
+        // 5: initial capacity
+        // 0.75f: load factor
+        // true: access order:  order when read and write vs when write
+        super(capacity, 0.75f, true);
+        this.capacity = capacity;
+    }
+
+    // This method is called after a put or putAll
+    @Override
+    protected boolean removeEldestEntry(Map.Entry<K, V> eldest) {
+        // Remove the eldest entry if the size exceeds capacity
+        return size() > capacity;
+    }
+}
 
 public class LRUCache<K, V> {
 
