@@ -1,5 +1,91 @@
 package com.ar50645.recursion;
 
+
+import java.util.HashSet;
+import java.util.Set;
+
+class Solution {
+    record Pair(int i, int j){}
+    public void solveSudoku(char[][] board) {
+
+        Set<Character>[] trackRow = new HashSet[9];
+        Set<Character>[] trackCol = new HashSet[9];
+        Set<Character>[] trackBox = new HashSet[9];
+
+        // init
+        for(int i = 0; i < 9; i++) {
+            trackRow[i] = new HashSet<>();
+            trackCol[i] = new HashSet<>();
+            trackBox[i] = new HashSet<>();
+        }
+
+        for(int i = 0; i < board.length; i++) {
+            for(int j = 0; j < board[0].length; j++) {
+                char val = board[i][j];
+                if(val != '.') {
+                    trackRow[i].add(val);
+                    trackCol[j].add(val);
+                    trackBox[getBoxNumber(i, j)].add(val);
+                }
+            }
+        }
+        fill(board, 0, 0, trackRow, trackCol, trackBox);
+    }
+
+    private boolean fill(char[][] board, int i, int j, Set<Character>[] trackRow, Set<Character>[] trackCol, Set<Character>[] trackBox) {
+
+        // reached the last row
+        if(i == 9) {
+            return true;
+        }
+
+        Pair next = getNextCell(i, j);
+        if(board[i][j] != '.') {
+            return fill(board, next.i(), next.j(), trackRow, trackCol, trackBox);
+        }
+
+        // attempt to fill
+        for(Character curr = '1' ; curr <= '9'; curr++ ) {
+            // check if the character is eligible to add
+            int boxNumber = getBoxNumber(i, j);
+            if(!(trackRow[i].contains(curr) || trackCol[j].contains(curr) || trackBox[boxNumber].contains(curr))) {
+
+                //fill
+                board[i][j] = curr;
+                trackRow[i].add(curr);
+                trackCol[j].add(curr);
+                trackBox[boxNumber].add(curr);
+
+                if (fill(board, next.i(), next.j(), trackRow, trackCol, trackBox)) {
+                    return true;
+                }
+
+                //remove from cache
+                board[i][j] = '.';
+                trackRow[i].remove(curr);
+                trackCol[j].remove(curr);
+                trackBox[boxNumber].remove(curr);
+            }
+        }
+        return false;
+    }
+
+    private Pair getNextCell(int i, int j) {
+        if(j == 8) {
+            return new Pair(i + 1, 0);
+        }
+        else return new Pair(i, j + 1);
+    }
+
+
+
+    private int getBoxNumber(int i, int j) {
+        return (i/3) * 3 + j / 3;
+    }
+}
+
+
+// Interview Camp
 public class SudokuSolver {
     public static void solveSudoku(int[][] board) {
 
