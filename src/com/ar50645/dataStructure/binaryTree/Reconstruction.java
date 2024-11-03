@@ -3,53 +3,44 @@ package com.ar50645.dataStructure.binaryTree;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Reconstruction {
-    class Node {
-        int value;
-        Node left;
-        Node right;
+class TreeNode {
+    int val;
+      TreeNode left;
+      TreeNode right;
+      TreeNode() {}
+      TreeNode(int val) { this.val = val; }
+      TreeNode(int val, TreeNode left, TreeNode right) {
+          this.val = val;
+          this.left = left;
+          this.right = right;
+      }
+ }
+class Solution {
+    Map<Integer, Integer> map = new HashMap<>();
+    int preOrderIndex = 0;
 
-        Node(int value) {
-            this.value = value;
-        }
+    public TreeNode buildTree(int[] preOrder, int[] inOrder) {
+        buildIndex(inOrder);
+        return helper(preOrder, inOrder, 0, preOrder.length - 1);
     }
 
-    public Node construct(int[] inOrder, int[] preOrder) {
-        Map<Integer, Integer> inOrderMap = getInorderMap(inOrder);
-        return construct(preOrder, 0, preOrder.length - 1, inOrder, 0, inOrder.length - 1, inOrderMap);
-    }
-
-    // Recursive helper method
-    public Node construct(int[] preOrder, int preStart, int preEnd, int[] inOrder,
-                          int inStart, int inEnd, Map<Integer, Integer> inOrderMap) {
-        // Base case
-        if(preStart > preEnd || inStart > inEnd) {
+    private TreeNode helper(int[] preOrder, int[] inOrder, int i, int j) {
+        if(preOrderIndex >= preOrder.length || i > j) {
             return null;
         }
+        int rootVal = preOrder[preOrderIndex++];
+        TreeNode root = new TreeNode(rootVal);
+        int index = map.get(rootVal);
 
-        // Create root node
-        int rootValue = preOrder[preStart];
-        Node root = new Node(rootValue);
-
-        // Find root index in inorder traversal
-        int k = inOrderMap.get(rootValue);
-
-        // Number of nodes in the left subtree
-        int leftTreeSize = k - inStart;
-
-        // Recursively construct the left and right subtrees
-        root.left = construct(preOrder, preStart + 1, preStart + leftTreeSize, inOrder, inStart, k - 1, inOrderMap);
-        root.right = construct(preOrder, preStart + leftTreeSize + 1, preEnd, inOrder, k + 1, inEnd, inOrderMap);
+        root.left = helper(preOrder, inOrder, i, index - 1);
+        root.right = helper(preOrder, inOrder, index + 1, j);
 
         return root;
     }
 
-    // Utility method to create a map for inorder indices
-    public Map<Integer, Integer> getInorderMap(int[] inOrder) {
-        Map<Integer, Integer> map = new HashMap<>();
-        for(int i = 0; i < inOrder.length; i++) {
-            map.put(inOrder[i], i);
+    private void buildIndex(int[] preOrder) {
+        for(int i = 0; i < preOrder.length; i++) {
+            map.put(preOrder[i], i);
         }
-        return map;
     }
 }
